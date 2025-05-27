@@ -4,6 +4,8 @@
  */
 package emilyshop.appv2.Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -13,6 +15,8 @@ public class LoginVista extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    
     public LoginVista() {
         initComponents();
         
@@ -31,16 +35,15 @@ public class LoginVista extends javax.swing.JFrame {
         panelRound1 = new emilyshop.appv2.Vista.PanelRound();
         lbllogin = new javax.swing.JLabel();
         txtloginusuario = new javax.swing.JTextField();
-        txtlogincontrasena = new javax.swing.JTextField();
         btnlogininiciar = new javax.swing.JButton();
         lblusuario = new javax.swing.JLabel();
         lblcontrasena = new javax.swing.JLabel();
         lblregistro = new javax.swing.JLabel();
         btnloginregistrar = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
         txtfondologin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 550));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -54,20 +57,14 @@ public class LoginVista extends javax.swing.JFrame {
         lbllogin.setForeground(new java.awt.Color(255, 255, 255));
         lbllogin.setText("Login");
 
-        txtloginusuario.setBackground(new java.awt.Color(255,255,255,0));
         txtloginusuario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        txtloginusuario.setForeground(new java.awt.Color(255, 255, 255));
+        txtloginusuario.setForeground(new java.awt.Color(40, 40, 40));
         txtloginusuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         txtloginusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtloginusuarioActionPerformed(evt);
             }
         });
-
-        txtlogincontrasena.setBackground(new java.awt.Color(255,255,255,0));
-        txtlogincontrasena.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        txtlogincontrasena.setForeground(new java.awt.Color(255, 255, 255));
-        txtlogincontrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         btnlogininiciar.setText("Iniciar Sesion");
         btnlogininiciar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,11 +108,11 @@ public class LoginVista extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblregistro)
-                            .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblusuario)
-                                .addComponent(txtloginusuario)
+                                .addComponent(txtloginusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblcontrasena)
-                                .addComponent(txtlogincontrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))))
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(btnloginregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -133,14 +130,14 @@ public class LoginVista extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblcontrasena)
                 .addGap(18, 18, 18)
-                .addComponent(txtlogincontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(btnlogininiciar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblregistro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnloginregistrar)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanel1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 320, 370));
@@ -167,10 +164,16 @@ public class LoginVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnlogininiciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogininiciarActionPerformed
-        InicioVista ventanainicio = new InicioVista();
-        ventanainicio.setVisible(true);
-        this.dispose();
-        ventanainicio.setLocationRelativeTo(null);
+        String usuario = txtloginusuario.getText();
+        String contraseña = jPasswordField1.getText();
+        if(usuario.equals("admin") && contraseña.equals("123")){
+            InicioVista ventanainicio = new InicioVista();
+            ventanainicio.setVisible(true);
+            this.dispose();
+            ventanainicio.setLocationRelativeTo(null);
+        }else{
+            JOptionPane.showMessageDialog(null,"Usario o contraseña incorrectos");
+        }
     }//GEN-LAST:event_btnlogininiciarActionPerformed
 
     private void txtloginusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtloginusuarioActionPerformed
@@ -178,11 +181,14 @@ public class LoginVista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtloginusuarioActionPerformed
 
     private void btnloginregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginregistrarActionPerformed
+        
         RegistroVista ventanaregistro = new RegistroVista();
         ventanaregistro.setVisible(true);
         ventanaregistro.setLocationRelativeTo(null);
         this.dispose();
         ventanaregistro.setLocationRelativeTo(null);
+        
+        
     }//GEN-LAST:event_btnloginregistrarActionPerformed
 
     /**
@@ -225,13 +231,13 @@ public class LoginVista extends javax.swing.JFrame {
     private javax.swing.JButton btnlogininiciar;
     private javax.swing.JButton btnloginregistrar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblcontrasena;
     private javax.swing.JLabel lbllogin;
     private javax.swing.JLabel lblregistro;
     private javax.swing.JLabel lblusuario;
     private emilyshop.appv2.Vista.PanelRound panelRound1;
     private javax.swing.JLabel txtfondologin;
-    private javax.swing.JTextField txtlogincontrasena;
     private javax.swing.JTextField txtloginusuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,8 +17,6 @@ public class Venta extends Entidad {
     }
     
 
-    
-    // Método para agregar detalle
     public void agregarDetalle(DetalleVenta detalle) {
         detalle.setVenta(this);
         this.detalles.add(detalle);

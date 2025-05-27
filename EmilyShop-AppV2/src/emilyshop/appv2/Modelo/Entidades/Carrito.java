@@ -18,14 +18,13 @@ public class Carrito extends Entidad {
         items.add(item);
     }
     
-    // Método para calcular total
     public double getTotal() {
         return items.stream()
             .mapToDouble(ItemCarrito::getSubtotal)
             .sum();
     }
     
-    // Método para convertir carrito a venta
+    
     public Venta convertirAVenta(Venta.MetodoPago metodoPago) {
         Venta venta = new Venta();
         venta.setCliente(this.cliente);

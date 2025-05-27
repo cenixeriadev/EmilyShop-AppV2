@@ -10,20 +10,38 @@ public class Usuario extends Entidad {
     private String password;
     private String telefono;
     
-    // Constructor
+    
 
-    public Usuario(String nombre, String nombreUsuario, String password, String telefono) {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
-        this.password = password;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
     
+    public String getPassword(){
+        return password;
+    }
    
     public void setPassword(String password) {
-        if(password.length() < 8) {
-            throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres");
-        }
         this.password = password;
     }
     

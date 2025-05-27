@@ -1,10 +1,13 @@
 
-package emilyshop.appv2.Vista;
+import emilyshop.appv2.Vista.LoginVista;
 
 
-public class PrincipalVista {
+/**
+ *
+ * @author 3z
+ */
+public class Main {
 
-    
     public static void main(String[] args) {
          LoginVista ventanalogin =new LoginVista();
          ventanalogin.setVisible(true);

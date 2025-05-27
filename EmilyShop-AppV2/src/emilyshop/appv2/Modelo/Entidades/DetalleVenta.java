@@ -11,7 +11,6 @@ public class DetalleVenta extends Entidad {
     private double precioUnitario;
     private double subtotal;
     
-    // Constructor que calcula automáticamente el subtotal
     public DetalleVenta(Inventario zapatilla, int cantidad) {
         this.zapatilla = zapatilla;
         this.cantidad = cantidad;

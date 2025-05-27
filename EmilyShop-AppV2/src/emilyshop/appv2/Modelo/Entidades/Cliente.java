@@ -10,7 +10,7 @@ public class Cliente extends Entidad {
     private List<Venta> historialCompras;
     
     
-    // Método para calcular total gastado
+    
     public double getTotalGastado() {
         return historialCompras.stream()
             .mapToDouble(Venta::getTotalVenta)
