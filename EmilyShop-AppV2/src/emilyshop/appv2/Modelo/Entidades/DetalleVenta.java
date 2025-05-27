@@ -24,5 +24,18 @@ public class DetalleVenta extends Entidad {
     public double getSubtotal(){
         return subtotal;
     }
-    // ... getters y setters
+
+    public Inventario getZapatilla() {
+        return zapatilla;
+    }
+
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
 }

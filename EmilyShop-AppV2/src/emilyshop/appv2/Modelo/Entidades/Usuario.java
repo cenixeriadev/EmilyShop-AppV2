@@ -1,16 +1,13 @@
 package emilyshop.appv2.Modelo.Entidades;
-
 /**
  *
- * @author Lenovo
+ * @author 3z
  */
 public class Usuario extends Entidad {
     private String nombre;
     private String nombreUsuario;
     private String password;
     private String telefono;
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -44,6 +41,4 @@ public class Usuario extends Entidad {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
 }

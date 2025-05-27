@@ -16,9 +16,6 @@ public class ItemCarrito {
         this.precioUnitario = zapatilla.getPrecioVenta();
         this.subtotal = cantidad * precioUnitario;
     }
-    
-    
-    // ... getters
 
     public Inventario getZapatilla() {
         return zapatilla;

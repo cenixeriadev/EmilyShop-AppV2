@@ -1,4 +1,3 @@
-
 package emilyshop.appv2.Modelo.Entidades;
 import java.util.*;
 /**
@@ -11,12 +10,9 @@ public class Venta extends Entidad {
     private double totalVenta;
     private MetodoPago metodoPago;
     private List<DetalleVenta> detalles ;
-    
     public enum MetodoPago {
         EFECTIVO, TARJETA, TRANSFERENCIA
     }
-    
-
     public void agregarDetalle(DetalleVenta detalle) {
         detalle.setVenta(this);
         this.detalles.add(detalle);
@@ -25,9 +21,6 @@ public class Venta extends Entidad {
     public double getTotalVenta(){
         return totalVenta;
     }
-    
-    
-    // ... getters y setters
 
     public Cliente getCliente() {
         return cliente;
@@ -60,6 +53,4 @@ public class Venta extends Entidad {
     public void setDetalles(List<DetalleVenta> detalles) {
         this.detalles = detalles;
     }
-
-    
 }
